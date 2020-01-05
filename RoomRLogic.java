@@ -20,6 +20,7 @@ class RoomRLogic{
             for(int i = 0;i<sizesS.length;i++)rooms.add(new Room(names[i],Integer.parseInt(sizesS[i])));
             while((read=br.readLine())!=null){
                 sizesS = read.split(",");
+                sizesS[1] = sizesS[1].trim();
                 people.add(new Person(sizesS[0],sizesS[1]));
             }
             br.close();
