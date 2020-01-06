@@ -20,9 +20,9 @@ public class Printer{
     public static final String ANSI_CYAN = "\u001B[36m";
     public static final String ANSI_WHITE = "\u001B[37m";
 
-    private static String note1 = "note1.wav";
-    private static String note2 = "note2.wav";
-    private static String note3 = "note3.wav";
+    private static String note1 = "main\\note1.wav";
+    private static String note2 = "main\\note2.wav";
+    private static String note3 = "main\\note3.wav";
 
     public static void printInColor(String string,int speed,String color){
         for(char x:string.toCharArray()){

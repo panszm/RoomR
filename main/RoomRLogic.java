@@ -13,7 +13,7 @@ public class RoomRLogic{
         ArrayList<Room> rooms = new ArrayList<Room>();
         ArrayList<Person> people = new ArrayList<Person>();
         try{
-            BufferedReader br = new BufferedReader(new FileReader("config.txt"));
+            BufferedReader br = new BufferedReader(new FileReader("main\\config.txt"));
             String read = br.readLine();
             String[] sizesS = read.split(",");
             read = br.readLine();
