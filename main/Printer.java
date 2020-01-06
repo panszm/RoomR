@@ -1,10 +1,11 @@
+package main;
 import java.io.File;
 
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 
-class Printer{
+public class Printer{
     public static final int FAST = 50;
     public static final int AVERAGE = 125;
     public static final int SLOW = 250;

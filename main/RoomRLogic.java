@@ -1,3 +1,4 @@
+package main;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
@@ -5,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-class RoomRLogic{
+public class RoomRLogic{
 
     public HashMap<Room,ArrayList<Person>> assign(){
         String[] names;
@@ -97,18 +98,18 @@ class RoomRLogic{
         }
     }
 
-    class Person{
-        String name;
-        String group;
+    public class Person{
+        public String name;
+        public String group;
         protected Person(String name,String group){
             this.name=name;
             this.group=group;
         }
     }
-    class Room{
-        String name;
-        int size;
-        String groupName;
+    public class Room{
+        public String name;
+        public int size;
+        public String groupName;
         protected Room(String name,int size){
             this.size=size;
             this.name=name;
