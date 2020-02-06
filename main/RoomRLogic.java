@@ -1,6 +1,8 @@
 package main;
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -26,7 +28,9 @@ public class RoomRLogic{
             }
             br.close();
         }catch(Exception e){e.printStackTrace();}
-        return assignLogic(rooms,people);
+        HashMap<Room,ArrayList<Person>> result = assignLogic(rooms,people);
+        save(result);
+        return result;
     }
 
     private HashMap<Room,ArrayList<Person>> assignLogic(ArrayList<Room> rooms, ArrayList<Person> people){
@@ -96,6 +100,17 @@ public class RoomRLogic{
                 findRoomOptions(currentGroup, currentSize+options.get(options.size()-1).get(i).size, options.get(options.size()-1), i+1, options);
             }
         }
+    }
+
+    private void save(HashMap<Room,ArrayList<Person>> result){
+        try{
+            FileWriter fw = new FileWriter("main/result.txt");
+            for(Map.Entry<Room,ArrayList<Person>> x:result.entrySet()){
+                fw.write(x.getKey().name+" ("+x.getKey().groupName+"):\n");
+                for(Person p : x.getValue())fw.write("\t-"+p.name+"\n");
+            }
+            fw.close();
+        }catch(IOException e){e.printStackTrace();}
     }
 
     public class Person{
